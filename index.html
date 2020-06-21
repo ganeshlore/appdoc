@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>App Doc 1.0</title>
+  <meta name="description" content="Heart Of Every App">
+  <meta name="author" content="Ganesh Lore">
+
+    <link rel="stylesheet" href="./css/styles.css?v=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="./css/tree_maker.css"> -->
+
+    <!-- Prism theme -->
+
+    <link rel="stylesheet" href="./css/prism/prism.css">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/jquery.contextMenu.min.css">
+    
+    
+</head>
+
+<body>
+    <app>
+        <app-container id="app-body"></app-container>
+    </app>
+  
+    <div id='cntnr'>
+      <ul id='items'>
+        <li id="addchild">Map Child</li>
+        <li id="deletechild">Delete Child</li>
+     
+      <hr />
+     
+        <li id="select">Lock selection</li>
+      
+      <hr />
+     
+        <li>Send to Back</li>
+        <li>Bring to Front</li>  
+      </ul>
+    </div>
+
+    <div id="master-model" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body" id="modal-body">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/lib.js"></script>
+  <script src="./js/scripts.js"></script>
+  
+  <!-- Prism main -->
+  <script src="./js/prism/prism.js"></script>
+
+  <!--  Local APIs Service  -->
+  <script src="./js/localAPI.js"></script>
+  <script src="./js/jquery.contextMenu.min.js"></script>
+  
+  
+  <!-- <script src="./js/tree_maker.js"></script> -->
+  <script type="text/javascript">
+
+    (function(window){
+      window.htmlentities = {
+        /**
+         * Converts a string to its html characters completely.
+         *
+         * @param {String} str String with unescaped HTML characters
+         **/
+        encode : function(str) {
+          var buf = [];
+          
+          for (var i=str.length-1;i>=0;i--) {
+            buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+          }
+          
+          return buf.join('');
+        },
+        /**
+         * Converts an html characterSet into its original character.
+         *
+         * @param {String} str htmlSet entities
+         **/
+        decode : function(str) {
+          return str.replace(/&#(\d+);/g, function(match, dec) {
+            return String.fromCharCode(dec);
+          });
+        }
+      };
+    })(window);
+
+    $(document).ready(function () {
+
+      $("a[hashlink=yes]").on('click',function(){
+        
+        var url=$(this).attr('href');
+        window.location.href=url;// ## change url with hash
+        location.reload();       // ## reload page
+        e.preventDefault(); 
+
+      })
+      
+      //////   Tabs Click  /////////////
+      $(".appdoc-tabs li").on('click',function(){
+        var tab = $(this).attr('tab');
+        
+
+        $('.nav-tabs li.active').removeClass('active');
+        $(this).addClass('active');
+
+
+        $(".details.active").removeClass('active');
+        $(".details[tab-content="+tab+"]").addClass('active');
+
+      })
+      
+    })
+
+  </script>
+</body>
+</html>
