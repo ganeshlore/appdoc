@@ -25,11 +25,12 @@ pre[class*="language-"] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+	margin: 0 0 1.5em !important;
 }
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-	background: hsl(0, 0%, 8%); /* #141414 */
+	background: hsl(0, 0%, 8%) !important; /* #141414 */
 }
 
 /* Code blocks */
@@ -40,6 +41,7 @@ pre[class*="language-"] {
 	margin: .5em 0;
 	overflow: auto;
 	padding: 1em;
+	height: 80vh;
 }
 
 pre[class*="language-"]::-moz-selection {
@@ -156,6 +158,14 @@ pre[data-line] {
 .token {
 	position: relative;
 	z-index: 1;
+}
+
+.token.operator {
+	background: none !important;
+}
+
+.line-numbers-rows > span:before{
+	line-height: 10px;
 }
 
 .line-highlight {

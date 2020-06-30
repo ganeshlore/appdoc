@@ -1,10 +1,16 @@
-
+<link rel="stylesheet" href="./css/prism/prism-twilight.css">
 <div class="row">
-    <div class="col-12 col-md-6 scrollxy">
+    <div class="col-12 col-md-6 scrollxy gridbg">
+        <div class="sub-menu-icon project-map">
+          <button class="btn project-home"><i class="fa fa-home"></i></button>
+          <button class="btn project-import"><i class="fa fa-exchange"></i></button>
+          <button class="btn project-backup"><i class="fa fa-database"></i></button>
+          <span class="selected-page">Index</span>
+        </div>
         <div id="appDocTree">
             <figure> 
                 <ul class="tree">
-                  <li id="start" uid="1" path="./live-oclular-v1/index.html"><span>index.html</span>
+                  <li id="0" uid="0" path="./no.file" class="parent-node"><span>Start</span>
                     <!-- <ul>
                       <li><span>About us</span>
                         <ul>
@@ -48,44 +54,60 @@
                     </ul> -->
                   </li>
                 </ul>
-              </figure>
+            </figure>
         </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 control-panel">
         <ul class="nav nav-tabs appdoc-tabs">
-            <li tab="structure" class="active"><a href="#">Structure</a></li>
-            <li tab="doc"><a href="#">Documentation</a></li>
-            <li tab="code"><a href="#">Code</a></li>
+            <li tab="doc" class="active"><a>Documentation</a></li>
+            <li tab="code"><a>Code</a></li>
+            <li tab="process"><a>Process</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Includes
+              <a class="dropdown-toggle" data-toggle="dropdown">Includes
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">./lib.js</a></li>
-                <li><a href="#">./dahboard.html</a></li>
-                <li><a href="#">./page/company.html</a></li>
+                <li><a>./lib.js</a></li>
+                <li><a>./dahboard.html</a></li>
+                <li><a>./page/company.html</a></li>
               </ul>
             </li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Functions
+                <a class="dropdown-toggle" data-toggle="dropdown">Functions
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">openUrl()</a></li>
                   <li><a href="#">menuList()</a></li>
                   <li><a href="#">readXml()</a></li>
                 </ul>
-              </li>
+            </li>
+            <li tab="allfiles"><a>All Files</a></li>
         </ul>
 
-        <div tab-content="structure" id="appdoc-structure" class="details active">
+        <div tab-content="allfiles" class="details">
+          <div id="appdoc-structure" class="data-container"></div>
+          <div id="pagination-btn"></div>
+        </div>
+        
+        <div tab-content="doc" id="appdoc-doc" class="details active">
 
         </div>
-        <div tab-content="doc" id="appdoc-doc" class="details">
 
-        </div>
         <!-- Code Append Here Of particular Page -->
         <div tab-content="code" id="appdoc-code" class="details">
 
         </div>
+
+        <div tab-content="process" class="details">
+          <div class="sub-menu-icon process-menu">
+            <button class="btn process-home"><i class="fa fa-home"></i> &nbsp; <span id="active-step"></span></button>
+            <button class="btn process-add"><i class="fa fa-plus"></i></button>
+            <button class="btn process-modify"><i class="fa fa-edit"></i></button>
+            <button class="btn process-delete"><i class="fa fa-trash"></i></button>
+            <button class="btn process-sequence"><i class="fa fa-list"></i></button>
+          </div>
+          <div id="appdoc-process" class="data-container"></div>
+        </div>
+
     </div>
 </div>
   
